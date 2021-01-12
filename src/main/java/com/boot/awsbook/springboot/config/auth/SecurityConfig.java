@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .authorizeRequests()  // authorizing by url and antMatchers require authorizeRequest()
                     .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
                     .antMatchers("/api/v1/**").hasRole(Role.USER.name())  // url or http, only user can use /api/v1/**
-                    .anyRequest().authenticated()  // login user can use anyother url
+                    .anyRequest().authenticated()  // login user can use any other url
                 .and()
                     .logout().logoutSuccessUrl("/")
                 .and()
