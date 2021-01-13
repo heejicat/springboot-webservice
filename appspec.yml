@@ -13,7 +13,7 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: stope.sh # nginx와 연결되어 있지 않은 스프링 부트를 종료
+    - location: stop.sh # nginx와 연결되어 있지 않은 스프링 부트를 종료
       timeout: 60
       runas: ec2-user
   ApplicationStart:
