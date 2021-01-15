@@ -13,5 +13,4 @@ function switch_proxy() {
 
   echo "> nginx Reload"
   sudo service nginx reload
-
 }
