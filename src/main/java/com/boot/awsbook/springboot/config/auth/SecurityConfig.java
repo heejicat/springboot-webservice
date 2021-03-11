@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable().headers().frameOptions().disable()  // for using h2 console
                 .and()
                     .authorizeRequests()  // authorizing by url and antMatchers require authorizeRequest()
-                    .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
+                    .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/index").permitAll()
                     .antMatchers("/api/v1/**").hasRole(Role.USER.name())  // url or http, only user can use /api/v1/**
                     .anyRequest().authenticated()  // login user can use any other url
                 .and()

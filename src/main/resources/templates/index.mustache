@@ -1,6 +1,6 @@
 {{>layout/header}}
 
-    <h1>Web service start with Spring boot ver.3</h1>
+    <p>Books that I've read</p>
     <div class="col-md-12" >
         <!-- login -->
         <div class="row">
@@ -26,7 +26,6 @@
                 <th>No</th>
                 <th>TITLE</th>
                 <th>AUTHOR</th>
-                <th>UPDATED DATE</th>
             </tr>
             </thead>
             <tbody id="tbody">
@@ -35,7 +34,6 @@
                     <td>{{id}}</td>
                     <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
-                    <td>{{modifiedDate}}</td>
                 </tr>
             {{/posts}}
             </tbody>
