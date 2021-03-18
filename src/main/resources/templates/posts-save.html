@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head"></head>
+
+<body>
+    <div th:replace="fragments/common :: nav"></div>
+
+    <div class="container">
+        <h4 class="padding15">Create Post</h4>
+
+        <div class="col-md-12">
+            <form>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Write title here">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" placeholder="Write Author here">
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" placeholder="Write Content here"></textarea>
+                </div>
+            </form>
+                <a href="/" role="button" class="btn btn-secondary">Cancel</a>
+                <button type="button" class="btn btn-primary" id="btn-save">Submit</button>
+        </div>
+    </div>
+
+    <th:block th:replace="fragments/common :: footer"></th:block>
+
+</body>
+</html>

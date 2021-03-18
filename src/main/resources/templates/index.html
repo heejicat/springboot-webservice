@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head"></head>
+
+<body>
+    <div th:replace="fragments/common :: nav"></div>
+
+    <div class="container">
+        <h4 class="padding15">Books that we want to share</h4>
+        <div class="col-md-12" >
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/posts/save" role="button" class="btn btn-primary">Write</a>
+                </div>
+            </div>
+            <br>
+            <!-- list -->
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                    <tr>
+                        <th>No</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr th:each="post: ${posts}">
+                        <td>[[${id}]]</td>
+                        <td><a href="/posts/update/[[${id}]]">[[${title}]]</a></td>
+                        <td>[[${author}]]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <th:block th:replace="fragments/common :: footer"></th:block>
+
+    </body>
+</html>

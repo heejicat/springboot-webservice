@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Spring boot Web service</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="nav">
+        <a href="/"><h3 class="nav-li-right">Heeji's Spring boot AWS Project</h3></a>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/index">Book shelf</a></li>
+            </ul>
+            <!-- login -->
+            <ul class="nav navbar-nav navbar-right">
+            <th:block th:if="${userName} != null">
+                <li class="padding15">Signed as <span id="user"><strong>[[${userName}]]</strong></span></li>
+                <li><a href="/logout">Logout</a></li>
+            </th:block>
+            <th:block th:if="${userName} == null">
+                <li class="padding15">Sign in with</li>
+                <li><a href="/oauth2/authorization/google">Google</a></li>
+                <li><a href="/oauth2/authorization/naver">Naver</a></li>
+            </th:block>
+            </ul>
+        </nav>
+
+    </div>
+
+    <th:block th:fragment="footer">
+        <footer>Copyright @ 2021 Heeji Choi</footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!--index.js 추가-->
+        <script src="/js/app/index.js"></script>
+    </th:block>
+</body>
+</html>
+
