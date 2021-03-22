@@ -25,9 +25,9 @@
                 </thead>
                 <tbody id="tbody">
                     <tr th:each="post: ${posts}">
-                        <td>[[${id}]]</td>
-                        <td><a href="/posts/update/[[${id}]]">[[${title}]]</a></td>
-                        <td>[[${author}]]</td>
+                        <td th:text="${post.id}"></td>
+                        <td><a th:href="${'/posts/update/' + post.id}"  th:text="${post.title}"></a></td>
+                        <td th:text="${post.author}"></td>
                     </tr>
                 </tbody>
             </table>

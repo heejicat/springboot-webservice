@@ -25,7 +25,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('Submit Success!');
-            window.location.href = '/';
+            window.location.href = '/index';
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });
@@ -47,7 +47,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('Update Success!');
-            window.location.href = '/';
+            window.location.href = '/index';
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });
@@ -63,7 +63,7 @@ var main = {
             contentType: 'application/json; charset=utf-8',
         }).done(function() {
             alert('Delete Success!');
-            window.location.href = '/';
+            window.location.href = '/index';
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });

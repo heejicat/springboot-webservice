@@ -8,11 +8,15 @@ footer {
    bottom: 0;
    width: 100%;
    background-color: lightsteelblue;
-   padding: 20px;
+   padding: 10px;
 }
-
 .navbar-right {
     margin-right: 0!important;
+}
+
+.homeTitle {
+    font-size: 30px;
+    padding-bottom: 15px;
 }
 
 .padding15 {

@@ -3,6 +3,7 @@ package com.boot.awsbook.springboot.web;
 import com.boot.awsbook.springboot.config.auth.LoginUser;
 import com.boot.awsbook.springboot.config.auth.dto.SessionUser;
 import com.boot.awsbook.springboot.domain.posts.Posts;
+import com.boot.awsbook.springboot.domain.user.Role;
 import com.boot.awsbook.springboot.service.posts.PostsService;
 import com.boot.awsbook.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,11 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
+    public String postsSave(Model model, @LoginUser SessionUser user) {
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+            model.addAttribute("userRole", Role.USER.name());
+        }
         return "posts-save";
     }
 

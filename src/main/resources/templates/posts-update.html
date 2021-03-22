@@ -1,31 +1,38 @@
-{{>layout/header}}
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/common :: head"></head>
 
-<h1>Update Post</h1>
+<body>
+    <div th:replace="fragments/common :: nav"></div>
 
-<div class="col-md-12">
-    <div class="col-md-4">
-        <form>
-            <div class="form-group">
-                <label for="id">No</label>
-                <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <form>
+                    <div class="form-group">
+                        <label for="id">No</label>
+                        <input type="text" class="form-control" id="id" th:value="${post.id}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" th:value="${post.title}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" class="form-control" id="author" th:value="${post.author}">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea class="form-control" id="content" th:field="${post.content}"></textarea>
+                    </div>
+                </form>
+                <a href="/index" role="button" class="btn btn-secondary">Cancel</a>
+                <button type="button" class="btn btn-primary" id="btn-update">Submit</button>
+                <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
             </div>
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" value="{{post.title}}" >
-            </div>
-            <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="content">Content</label>
-                <textarea class="form-control" id="content">{{post.content}}</textarea>
-            </div>
-        </form>
-        <a href="/" role="button" class="btn btn-secondary">Cancel</a>
-        <button type="button" class="btn btn-primary" id="btn-update">Submit</button>
-        <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
+        </div>
     </div>
-</div>
 
-{{>layout/footer}}
+    <th:block th:replace="fragments/common :: footer"></th:block>
+
+</body>
+</html>
